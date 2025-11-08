@@ -40,6 +40,11 @@ The GNU libc functions which can be overriden/"wrapped" are
 You can individually enable / disable each of these "protections"; by
 default, only calls to the first two functions are intercepted.
 
+### NOTES ON BUGS
+
+Please see the **BUGS** file, **TLDR.md** and Issues for important notes on
+existing bugs and workarounds.
+
 ## Configuring, compiling, installing and activating libtrash
 
 The INSTALL file contains summarized installation instructions that
@@ -55,8 +60,8 @@ It will emit a lot of output each time an unlink call is made. Other config
 variables may be used for fine tuning installation, such as
 * --prefix (default is **/usr/local**
 * --libdir (default is **$(prefix)/lib**
-* --docdir (default is **$(prefix)/share/doc/libtrash)
-* --mandir (default is **$(prefix)/share/man)
+* --docdir (default is **$(prefix)/share/doc/libtrash)**
+* --mandir (default is **$(prefix)/share/man)**
 
 NOTE: If you want to install libtrash locally as a user, set
 * --prefix=$HOME

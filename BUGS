@@ -1,0 +1,25 @@
+Nov 2025
+
+This file summarizes various bugs and workarounds
+
+1: As detailed in TLDR.md, Chrome and Firefox do not work
+(sometimes) when libtrash is preloaded. These browsers
+should be loaded with the command: LD_PRELOAD= browser_command.
+Nearly 20 years of review cannot fix this.
+
+2: As outlined in Issue #7, programs that operate recursively
+may fail when libtrash is preloaded. The program lua fails in
+certain circumstances. A thorough review by the maintainer
+verified the issue but has no fix in the pipeline. Again,
+LD_PRELOAD= lua_command should be used.
+
+3: As outlined in Issue #8, It appears the PROTECT_TRASH
+variable cannot be unset. The maintainer has verified this
+but it remains unclear what the original developer intended.
+I believe that if libtrash is activated, the TRASH folder
+should be protected. See libtrash.conf.5 manpage for more
+info. This could be an omission or a bug or a documentation
+error. Best practice is to use TRASH_OFF=YES rm TRASH/file.
+
+Peter Hyman
+pete@peterhyman.com
